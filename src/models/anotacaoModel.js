@@ -5,11 +5,13 @@ class AnotacaoModel {
     return await prisma.nota.findMany();
   };
 
-  create = async (titulo,conteudo) => {
+  create = async (titulo,conteudo, favorita, cor) => {
     return await prisma.nota.create({
       data: {
         titulo,
-        conteudo
+        conteudo, 
+        favorita,
+        cor
       },
     });
   };
