@@ -42,7 +42,7 @@ class AnotacaoController {
 
   update = async (req, res) => {
     const { id } = req.params;
-    const { titulo, conteudo, favorita, cor, criadaEm, atualizadaEm} = req.body;
+    const { titulo, conteudo, favorita, cor} = req.body;
     try {
       const anotacaoAtualizada = await anotacaoModel.update(
         Number(id),
@@ -50,8 +50,6 @@ class AnotacaoController {
         conteudo,
         favorita,
         cor,
-        criadaEm,
-        atualizadaEm
       );
 
       if (!anotacaoAtualizada) {

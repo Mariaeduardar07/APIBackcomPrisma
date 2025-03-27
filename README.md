@@ -62,7 +62,10 @@ DATABASE_URL="file:./dev.db"
 <img src="./assets/img/listarTodasAsAnotações.png" alt="desmonstração">
 
 - **Buscar anotação por ID**
-
+<img src="./assets/img/getById.png" alt="desmonstração" width="500">
 
 - **Atualizar anotações existentes**
+<img src="./assets/img/put.png">
+
 - **Excluir anotações**
+<img src="./assets/img/delete.png" alt="desmonstração" width="500">

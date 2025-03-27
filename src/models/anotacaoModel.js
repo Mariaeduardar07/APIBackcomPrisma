@@ -6,7 +6,7 @@ class AnotacaoModel {
   };
 
   getById = async (id) => {
-    return await prisma.note.findUnique({
+    return await prisma.nota.findUnique({
       where: { id },
     });
   };
@@ -22,19 +22,18 @@ class AnotacaoModel {
     });
   };
 
-  update = async (id, titulo, favorita, cor, atualizadaEm) => {
+  update = async (id, titulo, favorita, cor) => {
     try {
       const anotacao = await prisma.nota.update({
         where: { id },
         data: {
-          favorita: favorita !== undefined ? favorita : true,
+          favorita,
           titulo, 
           cor, 
-          atualizadaEm: atualizadaEm || new Date(),
         },
       });
 
-      return tarefa;
+      return anotacao;
     } catch (error) {
       console.log("Error", error);
       throw error;
@@ -43,7 +42,7 @@ class AnotacaoModel {
 
   delete = async (id) => {
     try {
-      const anotacaoDeletada = await prisma.note.delete({
+      const anotacaoDeletada = await prisma.nota.delete({
         where: { id },
       });
 
