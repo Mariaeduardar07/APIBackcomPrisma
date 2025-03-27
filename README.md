@@ -34,24 +34,24 @@ A API REST desenvolvida para o sistema **QuickNotes** oferece as seguintes funci
 ## Modelo de Dados
 
 O modelo de dados foi implementado utilizando o Prisma ORM. A tabela `notas` segue a estrutura abaixo:
-**IMAGEM**
+<img src="./assets/img/image.png" alt="desmonstração" width="500">
 
 ## Como executar o Projeto
 
-1. clone o repositorio
+1. clone o repositorio:
 git clone https://github.com/Mariaeduardar07/APIBackcomPrisma.git
 
 2. Instale as dependências 
-npm install
+`npm install`
 
-3. Crie o arquivo .env e configure o banco de dados no arquivo
+3. Crie o arquivo .env e configure o banco de dados no arquivo:
 DATABASE_URL="file:./dev.db"
 
 4. Execute as migrações do Prisma:
-npx prisma migrate dev
+`npx prisma migrate dev`
 
 5. Inicie o servido
-npm run dev
+`npm run dev`
 
 ## Endpoints da API
 
@@ -59,8 +59,10 @@ npm run dev
 <img src="./assets/img/post-anotacoes.png" alt="desmonstração" width="500">
 
 - **Listar todas as anotações**
+<img src="./assets/img/listarTodasAsAnotações.png" alt="desmonstração">
 
 - **Buscar anotação por ID**
+
+
 - **Atualizar anotações existentes**
 - **Excluir anotações**
-- **Marcar anotações como favoritas**

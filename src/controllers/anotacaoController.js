@@ -11,6 +11,21 @@ class AnotacaoController {
     }
   };
 
+  getById = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const anotacao = await anotacaoModel.getById(Number(id));
+      if (!anotacao) {
+        return res.status(404).json({ erro: "Anotação não encontrada" });
+      }
+      res.json(anotacao);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ erro: "Erro ao buscar a anotação" });
+    }
+  };
+
   create = async (req, res) => {
     const { titulo, conteudo, favorita, cor } = req.body;
     try {
@@ -53,9 +68,9 @@ class AnotacaoController {
     const { id } = req.params;
 
     try {
-      const sucesso = await anotacaoModel.delete(Number(id));
+      const anotacao = await anotacaoModel.delete(Number(id));
 
-      if (!sucesso) {
+      if (!anotacao) {
         return res.status(404).json({ erro: "Anotação não encontrada" });
       }
 
